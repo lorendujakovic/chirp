@@ -50,7 +50,7 @@
         }
 
         &-list {
-            list-style-image: url(../../../dist/assets/img/Checkmark.svg);
+            list-style-image: asset('img', 'Checkmark.svg');
             
             margin: 0;
 

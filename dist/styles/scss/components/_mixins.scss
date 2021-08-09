@@ -17,3 +17,9 @@ $breakpoints-down: ("small": "39.9375em", "medium": "63.9375em", "large": "87.43
         @content;
     }
 }
+
+$asset-base-path: '../../../dist/assets' !default;
+
+@function asset($type, $file) {
+  @return url($asset-base-path + '/' + $type + '/' + $file);
+}

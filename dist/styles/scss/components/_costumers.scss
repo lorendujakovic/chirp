@@ -95,7 +95,7 @@
             height: 100px;
             left: -12px;
 
-            background: url('../../../dist/assets/img/heart.png'), no-repeat;
+            background: asset('img', 'heart.png'), no-repeat;
             background-position: 0 0;
             
             cursor: pointer;

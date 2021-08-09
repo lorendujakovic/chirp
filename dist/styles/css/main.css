@@ -618,7 +618,7 @@ li {
   color: #000;
 }
 .pricing__item-list {
-  list-style-image: url(../../../dist/assets/img/Checkmark.svg);
+  list-style-image: url("../../../dist/assets/img/Checkmark.svg");
   margin: 0;
 }
 .pricing__item-list li {
