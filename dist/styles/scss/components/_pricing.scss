@@ -1,0 +1,65 @@
+.pricing {
+
+    h2, p {
+        text-align: center;
+    }
+
+    &__copy {
+        margin-bottom: $dist-medium;
+    }
+
+    @include breakpoint-up(medium) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        background-color: $bg-pricing;
+        border: 1px solid #FFAD23;
+        border-radius: 5px;
+
+        padding: 1.5rem;
+
+        box-shadow: 1px 2px 6px -3px;
+
+        p {
+            text-align: left;
+        }
+
+        &-heading {
+            font-size: $font-s;
+            margin-bottom: 0.5rem;
+        }
+
+        &-copy {
+
+            margin-bottom: $dist-small;
+
+            span {
+                font: {
+                    size: $font-xxl;
+                    weight: bold;
+                }
+                color: $typo-primary;
+            }
+        }
+
+        &-list {
+            list-style-image: url(../../../dist/assets/img/Checkmark.svg);
+            
+            margin: 0;
+
+            li {
+                line-height: 1.7;
+                color: $typo-secondary;
+                
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}

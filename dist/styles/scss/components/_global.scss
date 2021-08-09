@@ -1,0 +1,233 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    font-family: 'Inter', sans-serif;
+
+    background-color: #ffffff;
+}
+
+h1, h2 ,h3, h4, p {
+    margin: 0;
+}
+
+h1 {
+    font-size: $font_xl;
+    
+    margin-bottom: $dist-small;
+
+    @include breakpoint-up(large) {
+        font-size: $font-xxl;
+    }
+}
+
+h2 {
+    font-size: $font-l;
+    margin-bottom: $dist-small;
+}
+
+h4 {
+    margin-bottom: 1rem;
+}
+
+p {
+    color: $typo-secondary;
+}
+
+li {
+    list-style-type: none;
+}
+
+//Spacing
+.container {
+    max-width: 82.1875rem;
+    margin: 0 auto;
+
+    &--pall {
+        padding-top: 5.375rem;
+        padding-right: 1.5rem;
+        padding-bottom: 5.375rem;
+        padding-left: 1.5rem;
+
+        @include breakpoint-up(medium) {
+            padding-left: 4.625rem;
+            padding-right: 4.625rem;
+
+        }
+
+        @include breakpoint-up(large){
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+    }
+
+    &--py {
+        padding-top: 5.375rem;
+        padding-bottom: 5.375rem;
+
+        @include breakpoint-up(large){
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+        }
+    }
+
+    &--px {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+
+        @include breakpoint-up(medium) {
+            padding-left: 4.625rem;
+            padding-right: 4.625rem;
+        }
+    }
+
+    &--pt {
+        padding-top: 5.375rem;
+
+        @include breakpoint-up(large){
+            padding-top: 8rem;
+        }
+    }
+
+    &--pr {
+        padding-right: 1.5rem;
+
+        @include breakpoint-up(medium) {
+            padding-right: 4.625rem;
+        }
+    }
+
+    &--pb {
+        padding-bottom: 5.375rem;
+
+        @include breakpoint-up(large){
+            padding-bottom: 8rem;
+        }
+    }
+
+    &--pl {
+        padding-left: 1.5rem;
+
+        @include breakpoint-up(medium) {
+            padding-left: 4.625rem;
+        }
+    }
+}
+
+.btn {
+    border: none;
+
+    font-size: $font-s;
+
+    i {
+        margin: 0.5rem;
+    }
+
+    &__twitter {
+        position: relative;
+        background-color: $twitterBlue;
+
+        color: $white;
+
+        padding: 0.5rem;
+
+        border-radius: 5px;
+
+        &:hover {
+            background: transparent;
+            color: $twitterBlue; 
+
+            &::before , &::after {
+            transition: all 700ms ease;
+            width: 100%;
+            }
+        }
+        &::before , &::after {
+
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0px;
+            width: 0px;
+            height: 3px;
+            background: $twitterBlue; 
+            transition: all 400ms ease;
+        }
+        &:after {
+            top: inherit;
+            left: inherit;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &__link {
+        background-color: transparent;
+
+        color: $typo-link;
+
+        &::after {
+            content: "➞";
+
+            display: inline-block;
+
+            position: relative;
+            top: 5px;
+
+            padding-left: 8px;
+
+            font-size: $font-l;
+
+            transition: transform 300ms ease-in-out;
+        }
+
+        &:hover  {
+
+            &::after {
+                transform: translateX(4px);
+            }
+        }
+    }
+}
+
+.text--blue {
+    color: $typo-link;
+    font-weight: bold;
+}
+
+#hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+
+.divider {
+    height: 1px;
+    width: 100%;
+    
+    margin-bottom: $dist-small;
+    
+    background-color: $typo-secondary;
+}
+
+//Background for scroll nav
+
+.scroll {
+    background-color: rgba($color: $bg-hero, $alpha: 0.8);
+    transition: all 300ms ease-in-out;
+}

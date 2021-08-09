@@ -1,0 +1,67 @@
+.footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    
+    background-color: $bg-footer;
+    
+    .container.container--px {
+
+        @include breakpoint-up(medium) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    &__logo {
+        font: {
+            weight: bold;
+            style: italic;
+        }
+        color: $twitterBlue;
+
+        text-decoration: none;
+
+        @include breakpoint-up(medium) {
+            flex: 1 1 50%;
+        }
+    }
+
+    &__links {
+        display: flex;
+        justify-content: space-between;
+
+        padding: 0;
+
+        a {
+            color: $typo-primary;
+            text-decoration: none;
+
+            &::after {
+                content: "";
+                display: block;
+
+                width: 0px;
+                height: 2px;
+
+                background-color: $typo-primary;
+
+                margin: 0 auto;
+
+                transition: all 300ms ease-in-out;
+            }
+
+            &:hover {
+
+                &::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        @include breakpoint-up(medium) {
+            flex: 2 1 20%;
+        }
+    }
+}
